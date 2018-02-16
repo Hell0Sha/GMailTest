@@ -44,6 +44,7 @@ public class DraftsPage extends AbstractPage {
 
 
     public DraftsPage checkEmailInDrafts(){
+        getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         draftSubjectField.click();
         waitForElementPresent(DRAFT_EMAIL_TO_CHECK_LOCATOR);
         String emailToData = draftEmailTo.getText();

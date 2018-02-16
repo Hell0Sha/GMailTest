@@ -52,6 +52,6 @@ public class MailTest {
 
     @AfterClass
     public void tearDown(){
-        //driver.quit();
+        driver.quit();
     }
 }
