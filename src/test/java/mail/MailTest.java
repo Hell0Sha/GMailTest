@@ -47,7 +47,7 @@ public class MailTest {
         DraftsPage draftsPage = new DraftsPage(driver).getDrafts();
     }
     @Test(priority = 4)
-    public void checkInfiDraft(){
+    public void checkInfinDraft(){
         DraftsPage draftsPage = new DraftsPage(driver).checkEmailInDrafts();
     }
 
