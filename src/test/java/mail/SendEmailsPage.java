@@ -21,7 +21,7 @@ public class SendEmailsPage extends AbstractPage {
     WebElement sendEmailTextField;
 
     public static final String SEND_EMAIL_TO = "shaadt_helena@mail.ru";
-    public static final String SEND_EMAIL_THEME = "test2";
+    public static final String SEND_EMAIL_THEME = "test3";
     public static final String SEND_EMAIL_TEXT = ":)!";
 
     public SendEmailsPage(WebDriver driver) {

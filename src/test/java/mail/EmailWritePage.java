@@ -12,8 +12,8 @@ public class EmailWritePage extends AbstractPage {
     String to,theme, text;
 
     public static final String SEND_EMAIL_TO = "shaadt_helena@mail.ru";
-    public static final String SEND_EMAIL_THEME = "Test2";
-    public static final String SEND_EMAIL_TEXT = "Have a nice day :)";
+    public static final String SEND_EMAIL_THEME = "Very Important";
+    public static final String SEND_EMAIL_TEXT = "Take a smile :)";
 
     @FindBy(xpath = "//div[contains(text(), 'COMPOSE')]")
     WebElement writeEmailButton;

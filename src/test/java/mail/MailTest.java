@@ -23,16 +23,31 @@ public class MailTest {
         desiredCapabilities = new DesiredCapabilities().chrome();
         desiredCapabilities.setPlatform(Platform.WINDOWS);
         driver = new RemoteWebDriver(new URL("http://10.6.218.14:4444/wd/hub"), desiredCapabilities);
-        //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-        //driver = new ChromeDriver();
+       //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+       //driver = new ChromeDriver();
     }
 
-    @Test
+    @Test(priority = 1)
     public void singInTest(){
         SingInPage singInPage = new SingInPage(driver).getBasePage().getUserAccount().isUserSignIn();
+       // DraftsPage draftsPage = new DraftsPage(driver).getDrafts().checkEmailInDrafts().sendEmailFromDrafts();
+       //
+       // emailWritePage.getEmailSendData();
+    }
+
+    @Test(priority = 2)
+    public void emailWriteTest(){
         EmailWritePage emailWritePage = new EmailWritePage(driver).writeEmail().saveEmailAsDraft();
+    }
+
+    @Test(priority = 3)
+    public void draftTest(){
         DraftsPage draftsPage = new DraftsPage(driver).getDrafts().checkEmailInDrafts().sendEmailFromDrafts();
-        emailWritePage.getEmailSendData();
+    }
+
+    @Test(priority = 4)
+    public void getDataEmailTest(){
+        EmailWritePage emailWritePage = new EmailWritePage(driver).getEmailSendData();
     }
 
     @AfterClass
