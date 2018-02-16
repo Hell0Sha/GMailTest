@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 
 public class MailTest {
@@ -42,10 +43,20 @@ public class MailTest {
 
     @Test(priority = 3)
     public void draftTest(){
-        DraftsPage draftsPage = new DraftsPage(driver).getDrafts().checkEmailInDrafts().sendEmailFromDrafts();
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        DraftsPage draftsPage = new DraftsPage(driver).getDrafts();
+    }
+    @Test(priority = 4)
+    public void checkInfiDraft(){
+        DraftsPage draftsPage = new DraftsPage(driver).checkEmailInDrafts();
     }
 
-    @Test(priority = 4)
+    @Test(priority = 5)
+    public void sendEmailFromDrafts(){
+        DraftsPage draftsPage = new DraftsPage(driver).sendEmailFromDrafts();
+    }
+
+    @Test(priority = 6)
     public void getDataEmailTest(){
         EmailWritePage emailWritePage = new EmailWritePage(driver).getEmailSendData();
     }
